@@ -27,7 +27,6 @@ const Navigation = () => {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         Doctors Portal
                     </Typography>
-                    <Link to="/appointment"><Button color="inherit">Appointment</Button></Link>
                     {
                         user?.email ?
                             <Box>

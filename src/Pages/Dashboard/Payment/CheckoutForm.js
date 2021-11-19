@@ -2,6 +2,7 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
 import useAuth from './../../../hooks/useAuth';
 import { CircularProgress } from '@mui/material';
+import Button from '@mui/material/Button';
 
 const CheckoutForm = ({ appointment }) => {
     const { price, patientName, _id } = appointment;
@@ -113,9 +114,9 @@ const CheckoutForm = ({ appointment }) => {
                         },
                     }}
                 />
-                {processing ? <CircularProgress></CircularProgress> : <button type="submit" disabled={!stripe || success}>
+                {processing ? <CircularProgress></CircularProgress> : <Button variant="contained" type="submit" disabled={!stripe || success}>
                     Pay ${price}
-                </button>}
+                </Button>}
             </form>
             {
                 error && <p style={{ color: 'red' }}>{error}</p>
